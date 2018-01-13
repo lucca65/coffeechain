@@ -2,7 +2,7 @@
   "name": "coffeechain",
   "version": "1.0.0",
   "description": "Compre café usando a blockchain",
-  "author": "Lucca <julienlucca@gmail.com>",
+  "author": "Lucca <julienlucca@gmail.com>, Esdras <esdrasedu@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "web3": "^1.0.0-beta.27"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
