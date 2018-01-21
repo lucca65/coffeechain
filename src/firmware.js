@@ -33,10 +33,11 @@ coffeeChain.OnCoffeeBought().watch(function (error, result) {
   if (error) {
     console.log('On Coffee Bought error:', error)
   } else {
-    console.log('Make a coffee')
+    console.log('Starting to make a coffee')
     var rele = new Gpio(2, 'out')
     rele.writeSync(1)
     setTimeout(function () {
+      console.log('The coffee is ready')
       rele.writeSync(0)
     }, 10000)
   }
