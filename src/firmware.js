@@ -13,6 +13,9 @@ var web3 = new Web3(new Web3.providers.HttpProvider('http://' + provider + ':854
 
 if (web3.isConnected()) {
   console.log('Provider ' + provider + ' is connected')
+} else {
+  console.log('Provider ' + provider + ' is offline')
+  process.exit(1)
 }
 
 var CoffeeChain = web3.eth.contract(JSON.parse(contract.abi))
@@ -31,10 +34,10 @@ coffeeChain.OnCoffeeBought().watch(function (error, result) {
     console.log('On Coffee Bought error:', error)
   } else {
     console.log('Make a coffee')
-    var led = new Gpio(16, 'out')
-    led.writeSync(1)
+    var rele = new Gpio(2, 'out')
+    rele.writeSync(1)
     setTimeout(function () {
-      led.writeSync(0)
+      rele.writeSync(0)
     }, 10000)
   }
 })
