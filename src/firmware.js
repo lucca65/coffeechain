@@ -12,7 +12,7 @@ const contract = {
 const web3 = new Web3(new Web3.providers.HttpProvider('http://' + provider + ':8545'))
 
 if (web3.isConnected()) {
-  console.log('Provider is connected')
+  console.log('Provider ' + provider + ' is connected')
 }
 
 const CoffeeChain = web3.eth.contract(JSON.parse(contract.abi))
