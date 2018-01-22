@@ -1,12 +1,100 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>coffeechain</title>
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
+
   <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+
+    <div class="ui inverted menu">
+      <div class="ui container">
+        <div href="#" class="active grey header item">☕️⛓ Coffeechain</div>
+        <div class="ui simple dropdown item">
+          Saiba mais!<i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item" href="https://ethereum.org/" target="_blank">Ethereum</a>
+            <a class="item" href="https://github.com/ethereum/web3.js/" target="_blank">Web3.js</a>
+            <div class="divider"></div>
+            <div class="header">Authors</div>
+            <a class="item" href="https://github.com/lucca65" target="_blank">Julien Lucca</a>
+            <a class="item" href="https://github.com/esdrasedu" target="_blank">Esdras Rosa</a>
+          </div>
+        </div>
+        <a class="item" id="tip">🍺 doar uma cerveja</a>
+      </div>
+    </div>
+
+    <a href="https://github.com/lucca65/coffeechain" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+
+    <div class="ui basic modal" id="no-web3-modal">
+        <div class="ui icon header">
+            <i class="red remove icon"></i> Ops no blockchain connection found
+        </div>
+        <div class="content" style="text-align: center">
+            <p>You need to install MetaMask to use this feature. <a href="https://metamask.io">https://metamask.io</a> </p>
+        </div>
+    </div>
+
+    <div class="ui basic modal" id="thanks-modal">
+        <div class="ui icon header">
+            <i class="green checkmark icon"></i> Thank you for your generosity!
+        </div>
+    </div>
+
+    <div class="ui basic modal" id="coffee-bought-modal">
+      <div class="ui icon header">
+        <i class="green checkmark icon"></i> Obrigado! Aproveite seu café
+      </div>
+    </div>
+
+    <div class="ui two column centered grid">
+      <div class="row">
+        <div class="column">
+            <img class="ui image" src="images/campus-party.png"/>
+
+            <div class="ui segment">
+              <div class="ui grid">
+                <div class="eight wide column">
+                  <h1 class="ui huge header" >
+                    <span style="font-size: 1.8em">☕</span>
+                    Coffeechain
+                  </h1>
+                </div>
+                <div class="eight wide column">
+                  <div class="ui circular large primary button right floated" id="buy">COMPRAR CAFÉ</div>
+                </div>
+              </div>
+              <div class="ui divider"></div>
+              <div class="ui centered grid">
+                <div class="ui statistics">
+                  <div class="statistic">
+                    <div class="value" id="counter"></div>
+                    <div class="label">comprados</div>
+                  </div>
+                  <div class="statistic">
+                    <div class="value" id="fee"></div>
+                    <div class="label">ETH</div>
+                  </div>
+                </div> 
+              </div>
+              <div class="ui divider"></div>
+              <div class="ui label" id="address"></div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/contract.js"></script>
+    <script src="js/app.js"></script>
   </body>
+
 </html>
