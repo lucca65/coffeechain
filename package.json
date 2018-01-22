@@ -6,11 +6,20 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/http-server . -d"
+    "start": "node_modules/.bin/http-server . -d",
+    "firmware": "node src/firmware.js"
   },
   "dependencies": {
+    "onoff": "^1.1.9",
+    "web3": "^0.20.4"
+  },
+  "devDependencies": {
     "http-server": "^0.10.0"
   },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  }
   "keywords": [
     "solidity",
     "web3js",
