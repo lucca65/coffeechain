@@ -3,6 +3,7 @@ pragma solidity ^0.4.19;
 contract Coffeechain {
   address public owner;
   uint256 public fee;
+  int256 public counter;
 
   event OnCoffeeBought();
 
@@ -18,6 +19,7 @@ contract Coffeechain {
 
   function buy() public payable {
     require(msg.value == fee);
+    counter = counter + 1;
     OnCoffeeBought();
   }
 
