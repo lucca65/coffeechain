@@ -2,6 +2,8 @@ console.log('Init firmware of CoffeeChain')
 var Web3 = require('web3')
 
 var Gpio = require('onoff').Gpio
+var rele = new Gpio(2, 'out')
+rele.writeSync(0)
 
 var provider = process.env.PROVIDER ? process.env.PROVIDER : 'localhost'
 var contract = {
