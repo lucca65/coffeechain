@@ -41,7 +41,7 @@ coffeeChain.OnCoffeeBought().watch(function (error, result) {
     setTimeout(function () {
       console.log('The coffee is ready')
       rele.writeSync(0)
-    }, 10000)
+    }, 45000)
   }
 })
 console.log('Start watch event OnCoffeeBought')
